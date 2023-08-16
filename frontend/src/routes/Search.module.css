@@ -1,0 +1,194 @@
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'NanumSquareNeo-Variable';
+}
+
+.searchField {
+    background-color: rgb(255, 241, 172);
+    padding: 10px 5px 20px 5px;
+    text-align: center;
+}
+
+.searchCover {
+    margin: auto;
+    position: relative;
+    width: 800px;
+    justify-content: space-between;
+}
+
+.searchInput {
+    width: 100%;
+    height: 3rem;
+    border: 1.5px solid black;
+    padding: 2px 0px 2px 20px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    background-color: white;
+}
+
+.searchButton {
+    position: absolute;
+    background-color: transparent;
+    color: black;
+    width: 2rem;
+    height: 2.5rem;
+    margin-left: 10px;
+    border: none;
+    top: 5px;
+    right: 20px;
+}
+
+.searchButton:hover {
+    background-color: rgb(255, 129, 129);
+    color: white;
+}
+
+.searchIcon {
+    font-size: 20px;
+}
+
+.searchKeyword {
+    width: 800px;
+    margin: auto;
+}
+
+.keywordTitle {
+    font-size: 15px;
+    width: 100%;
+    text-align: left;
+    margin: 5px 0px;
+    padding-left: 10px;
+}
+
+.menuBar {
+    margin: 0px;
+    padding: 20px;
+    border-bottom: 1px solid gray;
+}
+
+.title {
+    font-size: 20px;
+    margin: 0px;
+}
+
+.searchTitle {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.description {
+    font-size: 16px;
+}
+
+.listDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 0px;
+}
+
+.programBox {
+    list-style: none;
+    width: 49rem;
+    border: none;
+    float: left;
+    margin: 10px;
+    background-color: white;
+    border: 0px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px 0px rgb(174, 174, 174);
+    display: grid;
+    grid-auto-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.programTitle {
+    margin: 0px 0px 10px 0px;
+}
+
+.programDescription {
+    width: 100%;
+    grid-column: 1;
+}
+
+.programBox > a {
+    width: 70px;
+    display: inline;
+    grid-column: 2;
+}
+
+.applyButton {
+    width: 70px;
+    height: 4rem;
+    grid-column: 2;
+    background-color: rgb(255, 241, 172);
+    color: black;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.applyButton:hover {
+    background-color: white;
+    color: rgb(255, 241, 172);
+}
+
+.searchOption {
+    margin-top: 10px;
+    padding-left:6%;
+    text-align: left;
+}
+
+.optionTitle {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.selectBox {
+    margin: 0px 10px 0px 0px;
+    padding: 3px;
+    font-size: 16px;
+    width: 8rem;
+    text-align: center;
+}
+
+.optionDiv {
+    width: 49rem;
+    margin: auto;
+}
+
+.optionButton {
+    float: left;
+    border: 0px;
+    border-radius: 5px;
+    margin: 10px 5px 0px 0px;
+    padding: 3px;
+    font-size: 15px;
+    width: 4rem;
+    background-color: rgb(240, 240, 240);
+}
+
+.optionButtonActive {
+    float: left;
+    border: 0px;
+    border-radius: 5px;
+    margin: 10px 5px 0px 0px;
+    padding: 3px;
+    font-size: 15px;
+    width: 4rem;
+    background-color:  rgb(255, 241, 172);
+}
+
+.searchCover > input::placeholder {
+    color: black;
+}
