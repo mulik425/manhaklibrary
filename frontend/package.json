@@ -53,5 +53,5 @@
   "devDependencies": {
     "tailwindcss": "^3.3.3"
   },
-  "proxy": "http://15.164.225.225"
+  "proxy": "https://noways-c0bdff97feaf.herokuapp.com"
 }

@@ -12,7 +12,7 @@ function Community() {
   // 백엔드 API 엔드포인트
   const apiEndpoint = process.env.NODE_ENV === 'production'
   ? '/api/posts/boards'
-  : 'http://15.164.225.225/api/posts/boards';
+  : 'https://noways-c0bdff97feaf.herokuapp.com/api/posts/boards';
 
 useEffect(() => {
   // 백엔드 API 호출

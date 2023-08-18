@@ -25,7 +25,7 @@ function UserInfo() {
 
         if (isValid) {
             try {
-                const response = await fetch(`http://15.164.225.225/programs/apply/${id}`, {
+                const response = await fetch(`https://noways-c0bdff97feaf.herokuapp.com/programs/apply/${id}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

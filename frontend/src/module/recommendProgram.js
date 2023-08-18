@@ -145,7 +145,7 @@ function RecommendProgram() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const fetchHotPrograms = async () => {
-    axios.get('http://15.164.225.225/programs/popular')
+    axios.get('https://noways-c0bdff97feaf.herokuapp.com/programs/popular')
       .then(response => {
         setHotPrograms(response.data);
         console.log(response)

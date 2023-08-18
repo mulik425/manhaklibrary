@@ -22,7 +22,7 @@ function Post() {
     
       const apiEndpoint = process.env.NODE_ENV === 'production'
         ? '/api/posts/board/register'
-        : 'http://15.164.225.225/api/posts/board/register';
+        : 'https://noways-c0bdff97feaf.herokuapp.com/api/posts/board/register';
     
       try {
         const postData = {

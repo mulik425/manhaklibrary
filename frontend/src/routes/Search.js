@@ -122,7 +122,7 @@ function Search() {
     if (k !== null && k !== '') {
       if (sa === null || sa === '' || sa === '전체') {
         if (tab === 'stan') {
-          axios.get(`http://15.164.225.225/programs/location?keyword=${k}&area=${a}`)
+          axios.get(`https://noways-c0bdff97feaf.herokuapp.com/programs/location?keyword=${k}&area=${a}`)
             .then(response => {
               setPrograms(response.data);
             })
@@ -130,7 +130,7 @@ function Search() {
               console.error('Error fetching Programs:', error);
             });
         } else if (tab === 'hot') {
-          axios.get(`http://15.164.225.225/programs/popular?keyword=${k}&area=${a}`)
+          axios.get(`https://noways-c0bdff97feaf.herokuapp.com/programs/popular?keyword=${k}&area=${a}`)
             .then(response => {
               setPrograms(response.data);
             })
@@ -139,7 +139,7 @@ function Search() {
             });
         } else {
           if (!geolocation.error) {
-            axios.post("http://15.164.225.225/programs/nearby", {
+            axios.post("https://noways-c0bdff97feaf.herokuapp.com/programs/nearby", {
               latitude: geolocation.latitude,
               longitude: geolocation.longitude,
               keyword: keyword,
@@ -156,7 +156,7 @@ function Search() {
               });
           }
           else {
-            axios.get(`http://15.164.225.225/programs/location?keyword=${k}&area=${a}`)
+            axios.get(`https://noways-c0bdff97feaf.herokuapp.com/programs/location?keyword=${k}&area=${a}`)
               .then(response => {
                 setPrograms(response.data);
               })
@@ -167,7 +167,7 @@ function Search() {
         }
       } else {
         if (tab === 'stan') {
-          axios.get(`http://15.164.225.225/programs/location?keyword=${k}&area=${a}&subarea=${sa}`)
+          axios.get(`https://noways-c0bdff97feaf.herokuapp.com/programs/location?keyword=${k}&area=${a}&subarea=${sa}`)
             .then(response => {
               setPrograms(response.data);
             })
@@ -175,7 +175,7 @@ function Search() {
               console.error('Error fetching Programs:', error);
             });
         } else if (tab === 'hot') {
-          axios.get(`http://15.164.225.225/programs/popular?keyword=${k}&area=${a}&subarea=${sa}`)
+          axios.get(`https://noways-c0bdff97feaf.herokuapp.com/programs/popular?keyword=${k}&area=${a}&subarea=${sa}`)
             .then(response => {
               setPrograms(response.data);
             })
@@ -184,7 +184,7 @@ function Search() {
             });
         } else {
           if (!geolocation.error) {
-            axios.post("http://15.164.225.225/programs/nearby",  {
+            axios.post("https://noways-c0bdff97feaf.herokuapp.com/programs/nearby",  {
               latitude: geolocation.latitude,
               longitude: geolocation.longitude,
               keyword: keyword,
@@ -200,7 +200,7 @@ function Search() {
               });
           }
           else {
-            axios.get(`http://15.164.225.225/programs/popular?keyword=${k}&area=${a}&subarea=${sa}`)
+            axios.get(`https://noways-c0bdff97feaf.herokuapp.com/programs/popular?keyword=${k}&area=${a}&subarea=${sa}`)
               .then(response => {
                 setPrograms(response.data);
               })

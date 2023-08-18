@@ -12,7 +12,7 @@ function Home() {
 
     const [keyword, setKeyword] = useState('');
     const [randomSuggestKeywords, setRandomSuggestKeywords] = useState([]);
-
+ 
     useEffect(() => {
         generateRandomKeywords();
     }, []);
