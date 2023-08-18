@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
+import axios from "axios";
 import './design_userInfo.css';
 
 function UserInfo() {
