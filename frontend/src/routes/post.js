@@ -21,7 +21,7 @@ function Post() {
       e.preventDefault();
     
       const apiEndpoint = process.env.NODE_ENV === 'production'
-        ? '/api/posts/board/register'
+        ? 'https://noways-c0bdff97feaf.herokuapp.com/api/posts/board/register'
         : 'https://noways-c0bdff97feaf.herokuapp.com/api/posts/board/register';
     
       try {
