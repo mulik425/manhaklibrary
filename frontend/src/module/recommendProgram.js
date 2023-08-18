@@ -153,7 +153,6 @@ function RecommendProgram() {
     axios.get('link/programs/popular')
       .then(response => {
         setHotPrograms(response.data);
-        console.log(response)
         setIsLoading(false); // 로딩 완료
       })
       .catch(error => {

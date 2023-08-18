@@ -11,7 +11,7 @@ function Community() {
 
   const host = "link";
   axios.create({
-    baseURL: host,
+    url: host,
   });
 
   // 백엔드 API 엔드포인트

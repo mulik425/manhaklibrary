@@ -19,7 +19,7 @@ function Post() {
 
   const host = "link";
   axios.create({
-    baseURL: host,
+    url: host,
   });
   const handleSubmit = async (e) => {
     e.preventDefault();

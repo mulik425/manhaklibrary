@@ -8,7 +8,7 @@ function UserInfo() {
     const { id } = useParams();
     const host = "link";
     axios.create({
-        baseURL: host,
+        url: host,
     });
 
     const [userName, setUserName] = useState('');

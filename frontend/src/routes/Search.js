@@ -88,8 +88,9 @@ function Search() {
   const geolocation = useGeolocation();
   const host = "link";
   axios.create({
-    baseURL: host,
+    url: host,
   });
+  
 
   const [input, setInput] = useState('');
   const onChange = (event) => {
