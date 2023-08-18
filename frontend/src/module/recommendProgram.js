@@ -144,7 +144,7 @@ function RecommendProgram() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const host = "api";
+  const host = "link";
   axios.create({
     baseURL: host,
   });

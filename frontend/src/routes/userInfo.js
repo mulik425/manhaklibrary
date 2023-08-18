@@ -5,6 +5,11 @@ import './design_userInfo.css';
 function UserInfo() {
     const history = useHistory();
     const { id } = useParams();
+    const host = "link";
+    axios.create({
+        baseURL: host,
+    });
+
     const [userName, setUserName] = useState('');
     const [userPhoneNum, setUserPhoneNum] = useState('');
     const [userBirth, setUserBirth] = useState('');
@@ -25,7 +30,7 @@ function UserInfo() {
 
         if (isValid) {
             try {
-                const response = await fetch(`http://15.164.225.225/programs/apply/${id}`, {
+                const response = await fetch(`api/programs/apply/${id}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

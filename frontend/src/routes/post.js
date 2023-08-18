@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
 import styles from "./post.module.css";
@@ -8,56 +8,60 @@ function Post() {
   const history = useHistory();
   const [showSuccessPopup, setShowSuccessPopup] = useState(false); // 팝업 표시 여부 상태 추가
 
-    const [title, setTitle] = useState("");
-    const [content, setContent] = useState("");
-    const [location, setLocation] = useState("");
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [location, setLocation] = useState("");
 
-    const goBack = () => {
-      // 이전 화면으로 돌아가는 동작을 구현
-      history.push("/community");
-    };
-  
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-    
-      const apiEndpoint = process.env.NODE_ENV === 'production'
-        ? '/api/posts/board/register'
-        : 'http://localhost:4000/api/posts/board/register';
-    
-      try {
-        const postData = {
-          "title": title,
-          "content": content,
-          "location": location
-        };
-    
-        // API 호출하여 데이터 저장
-        const response = await axios.post(apiEndpoint, postData);
-    
-        if (response.data.success) {
-          setShowSuccessPopup(true);
-        } else {
-          console.log("데이터 저장 실패");
-        }
-      } catch (error) {
-        console.error("API 호출 실패:", error);
+  const goBack = () => {
+    // 이전 화면으로 돌아가는 동작을 구현
+    history.push("/community");
+  };
+
+  const host = "api";
+  axios.create({
+    baseURL: host,
+  });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const apiEndpoint = process.env.NODE_ENV === 'production'
+      ? '/api/posts/board/register'
+      : 'link/api/posts/board/register';
+
+    try {
+      const postData = {
+        "title": title,
+        "content": content,
+        "location": location
+      };
+
+      // API 호출하여 데이터 저장
+      const response = await axios.post(apiEndpoint, postData);
+
+      if (response.data.success) {
+        setShowSuccessPopup(true);
+      } else {
+        console.log("데이터 저장 실패");
       }
-    
-      // 입력 필드 초기화
-      setTitle("");
-      setContent("");
-      setLocation("");
-    };
-  
+    } catch (error) {
+      console.error("API 호출 실패:", error);
+    }
+
+    // 입력 필드 초기화
+    setTitle("");
+    setContent("");
+    setLocation("");
+  };
 
 
-  
-    return (
-      <>
+
+
+  return (
+    <>
       <div className={styles.menuBar}>
-                <Link to= {'/'}><h2 className={styles.title}>만학도서관</h2></Link>
-                <Link to='/community'><button className={styles.communityButton}>커뮤니티</button></Link>
-            </div>
+        <Link to={'/'}><h2 className={styles.title}>만학도서관</h2></Link>
+        <Link to='/community'><button className={styles.communityButton}>커뮤니티</button></Link>
+      </div>
       <h2 className={styles["com-name"]}>
         프로그램 신청 게시판
       </h2>
@@ -76,32 +80,32 @@ function Post() {
           </div>
           <div className={styles["form-group"]}>
             <select
-                id="location"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                required
-                className={styles.inputField}
-              >
-                <option value="전체">사는 지역을 선택하세요.</option>
-                <option value="서울">서울</option>
-                <option value="부산">부산</option>
-                <option value="대구">대구</option>
-                <option value="인천">인천</option>
-                <option value="세종">세종</option>
-                <option value="경기">경기</option>
-                <option value="강원">강원</option>
-                <option value="충북">충북</option>
-                <option value="충남">충남</option>
-                <option value="광주">광주</option>
-                <option value="대전">대전</option>
-                <option value="울산">울산</option>
-                <option value="전북">전북</option>
-                <option value="전남">전남</option>
-                <option value="경북">경북</option>
-                <option value="경남">경남</option>
-                <option value="제주">제주</option>
+              id="location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              required
+              className={styles.inputField}
+            >
+              <option value="전체">사는 지역을 선택하세요.</option>
+              <option value="서울">서울</option>
+              <option value="부산">부산</option>
+              <option value="대구">대구</option>
+              <option value="인천">인천</option>
+              <option value="세종">세종</option>
+              <option value="경기">경기</option>
+              <option value="강원">강원</option>
+              <option value="충북">충북</option>
+              <option value="충남">충남</option>
+              <option value="광주">광주</option>
+              <option value="대전">대전</option>
+              <option value="울산">울산</option>
+              <option value="전북">전북</option>
+              <option value="전남">전남</option>
+              <option value="경북">경북</option>
+              <option value="경남">경남</option>
+              <option value="제주">제주</option>
 
-              </select>
+            </select>
           </div>
           <div className={styles["form-group"]}>
             <textarea
@@ -118,16 +122,16 @@ function Post() {
         </form>
       </div>
       {showSuccessPopup && (
-         <div
-         className={styles["success_container"]}
-         style={{
-           position: 'fixed',
-           top: '50%',
-           left: '50%',
-           transform: 'translate(-50%, -50%)',
-           width: '50%',
-         }}
-       >
+        <div
+          className={styles["success_container"]}
+          style={{
+            position: 'fixed',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '50%',
+          }}
+        >
           <h2 className={styles["success_content"]}>등록되었습니다.</h2>
           <div className={styles["button_container"]}>
             <button
@@ -139,22 +143,22 @@ function Post() {
         </div>
       )}
       <footer className={styles["footer"]}>
-      <div className={styles["inner"]}>
-        <ul className={styles["actions"]}>
-          <p>(02) 123-000, likelion@gmail.com</p>
-          <p>멋쟁이 사자처럼 11기 노웨이즈</p>
-        </ul>
-      </div>
-      <div className={styles["copyright"]}>
-        Powered by:{" "}
-        <a href="https://www.lifelongedu.go.kr">국가평생학습포털 늘배움</a>
-        <p>Copyright © 2023 No-ways, LIKELION. All rights reserved.</p>
-      </div>
-    </footer>
+        <div className={styles["inner"]}>
+          <ul className={styles["actions"]}>
+            <p>(02) 123-000, likelion@gmail.com</p>
+            <p>멋쟁이 사자처럼 11기 노웨이즈</p>
+          </ul>
+        </div>
+        <div className={styles["copyright"]}>
+          Powered by:{" "}
+          <a href="https://www.lifelongedu.go.kr">국가평생학습포털 늘배움</a>
+          <p>Copyright © 2023 No-ways, LIKELION. All rights reserved.</p>
+        </div>
+      </footer>
     </>
-    );
-  }
-  
+  );
+}
+
 
 
 export default Post;

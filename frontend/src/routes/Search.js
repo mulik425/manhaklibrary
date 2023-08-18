@@ -86,6 +86,10 @@ const Desc = styled.div`
 function Search() {
   const { keyword } = useParams();
   const geolocation = useGeolocation();
+  const host = "link";
+  axios.create({
+    baseURL: host,
+  });
 
   const [input, setInput] = useState('');
   const onChange = (event) => {
@@ -122,7 +126,7 @@ function Search() {
     if (k !== null && k !== '') {
       if (sa === null || sa === '' || sa === '전체') {
         if (tab === 'stan') {
-          axios.get(`http://15.164.225.225/programs/location?keyword=${k}&area=${a}`)
+          axios.get(`api/programs/location?keyword=${k}&area=${a}`)
             .then(response => {
               setPrograms(response.data);
             })
@@ -130,7 +134,7 @@ function Search() {
               console.error('Error fetching Programs:', error);
             });
         } else if (tab === 'hot') {
-          axios.get(`http://15.164.225.225/programs/popular?keyword=${k}&area=${a}`)
+          axios.get(`api/programs/popular?keyword=${k}&area=${a}`)
             .then(response => {
               setPrograms(response.data);
             })
@@ -139,7 +143,7 @@ function Search() {
             });
         } else {
           if (!geolocation.error) {
-            axios.post("http://15.164.225.225/programs/nearby", {
+            axios.post("api/programs/nearby", {
               latitude: geolocation.latitude,
               longitude: geolocation.longitude,
               keyword: keyword,
@@ -156,7 +160,7 @@ function Search() {
               });
           }
           else {
-            axios.get(`http://15.164.225.225/programs/location?keyword=${k}&area=${a}`)
+            axios.get(`api/programs/location?keyword=${k}&area=${a}`)
               .then(response => {
                 setPrograms(response.data);
               })
@@ -167,7 +171,7 @@ function Search() {
         }
       } else {
         if (tab === 'stan') {
-          axios.get(`http://15.164.225.225/programs/location?keyword=${k}&area=${a}&subarea=${sa}`)
+          axios.get(`api/programs/location?keyword=${k}&area=${a}&subarea=${sa}`)
             .then(response => {
               setPrograms(response.data);
             })
@@ -175,7 +179,7 @@ function Search() {
               console.error('Error fetching Programs:', error);
             });
         } else if (tab === 'hot') {
-          axios.get(`http://15.164.225.225/programs/popular?keyword=${k}&area=${a}&subarea=${sa}`)
+          axios.get(`api/programs/popular?keyword=${k}&area=${a}&subarea=${sa}`)
             .then(response => {
               setPrograms(response.data);
             })
@@ -184,7 +188,7 @@ function Search() {
             });
         } else {
           if (!geolocation.error) {
-            axios.post("http://15.164.225.225/programs/nearby",  {
+            axios.post("api/programs/nearby",  {
               latitude: geolocation.latitude,
               longitude: geolocation.longitude,
               keyword: keyword,
@@ -200,7 +204,7 @@ function Search() {
               });
           }
           else {
-            axios.get(`http://15.164.225.225/programs/popular?keyword=${k}&area=${a}&subarea=${sa}`)
+            axios.get(`api/programs/popular?keyword=${k}&area=${a}&subarea=${sa}`)
               .then(response => {
                 setPrograms(response.data);
               })
