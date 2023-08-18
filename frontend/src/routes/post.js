@@ -8,9 +8,6 @@ function Post() {
   const history = useHistory();
   const [showSuccessPopup, setShowSuccessPopup] = useState(false); // 팝업 표시 여부 상태 추가
 
-    const goToSpecificPage = () => {
-      history.push('/');
-    };
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [location, setLocation] = useState("");
@@ -143,7 +140,6 @@ function Post() {
       )}
       <footer className={styles["footer"]}>
       <div className={styles["inner"]}>
-        <h2>Get In Touch</h2>
         <ul className={styles["actions"]}>
           <p>(02) 123-000, likelion@gmail.com</p>
           <p>멋쟁이 사자처럼 11기 노웨이즈</p>

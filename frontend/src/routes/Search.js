@@ -138,10 +138,6 @@ function Search() {
               console.error('Error fetching Programs:', error);
             });
         } else {
-          console.log(geolocation.latitude);
-          console.log(geolocation.longitude);
-          console.log(k);
-          console.log(a);
           if (!geolocation.error) {
             axios.post("http://localhost:4000/programs/nearby", {
               latitude: geolocation.latitude,
@@ -187,11 +183,6 @@ function Search() {
               console.error('Error fetching Programs:', error);
             });
         } else {
-          console.log(geolocation.latitude);
-          console.log(geolocation.longitude);
-          console.log(k);
-          console.log(a);
-          console.log(sa);
           if (!geolocation.error) {
             axios.post("http://localhost:4000/programs/nearby",  {
               latitude: geolocation.latitude,
@@ -243,18 +234,8 @@ function Search() {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const requestData = {
-        latitude: geolocation.latitude,
-        longitude: geolocation.longitude,
-        keyword: keyword,
-        area: area,
-        subarea: subArea
-      }
-    }
-    fetchData();
     fetchPrograms(keyword, area, subArea);
-  }, [keyword, area, subArea, tab]);
+  }, [keyword, area, subArea, geolocation.latitude, geolocation.longitude, tab, programs]);
 
   const history = useHistory();
 
@@ -269,7 +250,7 @@ function Search() {
     <div>
       <div className={styles.menuBar}>
         <Link to={'/'}><h2 className={styles.title}>만학도서관</h2></Link>
-        <button className={styles.communityButton}>커뮤니티</button>
+        <button className={styles.communityButton} onClick={() => history.push('/community')}>커뮤니티</button>
       </div>
       <div className={styles.searchField}>
         <h3 className={styles.searchTitle}>프로그램 검색</h3>
@@ -320,7 +301,6 @@ function Search() {
       </div>
       <footer className={styles["footer"]}>
         <div className={styles["inner"]}>
-          <h2>Get In Touch</h2>
           <ul className={styles["actions"]}>
             <p>(02) 123-000, likelion@gmail.com</p>
             <p>멋쟁이 사자처럼 11기 노웨이즈</p>

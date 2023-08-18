@@ -11,32 +11,6 @@ function Home() {
     const history = useHistory();
 
     const [keyword, setKeyword] = useState('');
-
-    /*const [randomSuggestKeywords, SetrandomSuggestKeywords] = useState([])
-
-    const randomPick = () => {
-        for (let i = 0; i < 6; i++) {
-            const randomKeywords = suggestKeywordArr[Math.floor(Math.random() * suggestKeywordArr)];
-            SetrandomSuggestKeywords([...randomSuggestKeywords, randomKeywords]);
-        }
-    }
-    
-    useEffect(() => {
-       randomPick();
-      }, [randomSuggestKeywords]);*/
-
-    /*const randomSuggestKeywords = useMemo(() => {
-        
-        const randomKeywords = [];
-        for (let i = 0; i < 5; i++) {
-            const randomWord = suggestKeywordArr[Math.floor(Math.random() * suggestKeywordArr)];
-            randomKeywords.push(randomWord);
-            console.log(randomWord)
-        }
-        console.log(randomKeywords)
-        return randomKeywords;
-    }, []);*/
-
     const [randomSuggestKeywords, setRandomSuggestKeywords] = useState([]);
 
     useEffect(() => {
@@ -83,7 +57,6 @@ function Home() {
             <RecommendProgram />
             <footer className={styles["footer"]}>
                 <div className={styles["inner"]}>
-                    <h2>Get In Touch</h2>
                     <ul className={styles["actions"]}>
                         <p>(02) 123-000, likelion@gmail.com</p>
                         <p>멋쟁이 사자처럼 11기 노웨이즈</p>

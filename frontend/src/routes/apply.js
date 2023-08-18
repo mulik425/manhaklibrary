@@ -75,7 +75,6 @@ function ProgramDetailRoute() {
 
             <footer id="footer">
                 <div className="inner">
-                    <h2>Get In Touch</h2>
                     <ul className="actions">
                         <p>(02) 123-000, likelion@gmail.com</p>
                         <p>멋쟁이 사자처럼 11기 노웨이즈</p>
