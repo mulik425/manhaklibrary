@@ -9,15 +9,10 @@ function Community() {
   const postsPerPage = 10;
   const [boardData, setBoardData] = useState([]); // 데이터를 useState로 저장
 
-  const host = "link";
-  axios.create({
-    url: host,
-  });
-
   // 백엔드 API 엔드포인트
   const apiEndpoint = process.env.NODE_ENV === 'production'
   ? '/api/posts/boards'
-  : 'link/api/posts/boards';
+  : 'http://15.164.225.225/api/posts/boards';
 
 useEffect(() => {
   // 백엔드 API 호출

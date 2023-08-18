@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
-import axios from "axios";
 import './design_userInfo.css';
 
 function UserInfo() {
     const history = useHistory();
     const { id } = useParams();
-    const host = "link";
-    axios.create({
-        url: host,
-    });
-
     const [userName, setUserName] = useState('');
     const [userPhoneNum, setUserPhoneNum] = useState('');
     const [userBirth, setUserBirth] = useState('');
@@ -31,7 +25,7 @@ function UserInfo() {
 
         if (isValid) {
             try {
-                const response = await fetch(`link/programs/apply/${id}`, {
+                const response = await fetch(`http://15.164.225.225/programs/apply/${id}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { FadeLoader } from "react-spinners";
+import {FadeLoader} from "react-spinners";
 
 const HotProgramField = styled.div`
   width: 800px;
@@ -144,15 +144,11 @@ function RecommendProgram() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const host = "link";
-  axios.create({
-    baseURL: host,
-  });
-
   const fetchHotPrograms = async () => {
-    axios.get('link/programs/popular')
+    axios.get('http://15.164.225.225/programs/popular')
       .then(response => {
         setHotPrograms(response.data);
+        console.log(response)
         setIsLoading(false); // 로딩 완료
       })
       .catch(error => {
@@ -188,62 +184,62 @@ function RecommendProgram() {
         <div className="programDiv">
           {hotPrograms.slice(0, 3).map((el, index) => (
             <div>
-              <Link to={`/apply/${el._id}`}>
+               <Link to={`/apply/${el._id}`}>
                 <div className="hotProgram" key={el._id}>
-                  <div className="hotProgramTitle">{el.name.length > 30 ? `${el.name.slice(0, 30)}...` : el.name}</div>
-                  <div className="descDiv">
-                    <span className="hotProgramEl">일시</span>
-                    <span className="hotProgramDesc">{el.programDate}</span>
-                  </div>
-                  <div className="descDiv">
-                    <span className="hotProgramEl">장소</span>
-                    <span className="hotProgramDesc">{el.location.specificlocation.length > 35 ? `${el.location.specificlocation.slice(0, 35)}...` : el.location.specificlocation}</span>
-                  </div>
-                </div>
+              <div className="hotProgramTitle">{el.name.length > 30 ? `${el.name.slice(0, 30)}...` : el.name}</div>
+              <div className="descDiv">
+                <span className="hotProgramEl">일시</span>
+                <span className="hotProgramDesc">{el.programDate}</span>
+              </div>
+              <div className="descDiv">
+                <span className="hotProgramEl">장소</span>
+                <span className="hotProgramDesc">{el.location.specificlocation.length > 35 ? `${el.location.specificlocation.slice(0, 35)}...` : el.location.specificlocation}</span>
+              </div>
+              </div>
               </Link>
             </div>
           ))}
         </div>
       </HotProgramField>
       <SuggestProgramField>
-        <div className="SuggestTitle">
-          <h4>추천 프로그램</h4>
-        </div>
+      <div className="SuggestTitle">
+      <h4>추천 프로그램</h4>
+      </div>
         <div className="programDiv">
-          <button
-            onClick={() => setCurrentIndex(currentIndex === 0 ? 3 : currentIndex - 1)}
-            disabled={currentIndex === 0}
-          >
-            <FontAwesomeIcon icon={faChevronLeft} size="lg" style={currentIndex === 0 ? { color: "#ffffff", } : { color: "#000000", }} />
-          </button>
+        <button
+          onClick={() => setCurrentIndex(currentIndex === 0 ? 3 : currentIndex - 1)}
+          disabled={currentIndex === 0}
+        >
+          <FontAwesomeIcon icon={faChevronLeft} size="lg" style={currentIndex === 0 ? {color: "#ffffff",} : {color: "#000000",}} />
+        </button>
           {randomSuggestPrograms.slice(currentIndex, currentIndex + 3).map((el, index) => (
             <div>
-              <Link to={`/apply/${el._id}`}>
-                <div className="suggestProgram" key={el._id}>
-                  <div className="suggestProgramTitle">{el.name.length > 30 ? `${el.name.slice(0, 30)}...` : el.name}</div>
-                  <div className="descDiv">
-                    <span className="suggestProgramEl">일시</span>
-                    <span className="suggestProgramDesc">{el.programDate}</span>
-                  </div>
-                  <div className="descDiv">
-                    <span className="suggestProgramEl">장소</span>
-                    <span className="suggestProgramDesc">{el.location.specificlocation.length > 35 ? `${el.location.specificlocation.slice(0, 35)}...` : el.location.specificlocation}</span>
-                  </div>
-                </div>
-              </Link>
+            <Link to={`/apply/${el._id}`}>
+              <div className="suggestProgram" key={el._id}>
+            <div className="suggestProgramTitle">{el.name.length > 30 ? `${el.name.slice(0, 30)}...` : el.name}</div>
+            <div className="descDiv">
+              <span className="suggestProgramEl">일시</span>
+              <span className="suggestProgramDesc">{el.programDate}</span>
             </div>
+            <div className="descDiv">
+              <span className="suggestProgramEl">장소</span>
+              <span className="suggestProgramDesc">{el.location.specificlocation.length > 35 ? `${el.location.specificlocation.slice(0, 35)}...` : el.location.specificlocation}</span>
+            </div>
+            </div>
+            </Link>
+          </div>
           ))}
           <button
-            onClick={() => setCurrentIndex(currentIndex === 3 ? 0 : currentIndex + 1)}
-            disabled={currentIndex === 3}
-          >
-            <FontAwesomeIcon icon={faChevronRight} size="lg" style={currentIndex === 3 ? { color: "#ffffff", } : { color: "#000000", }} />
-          </button>
+          onClick={() => setCurrentIndex(currentIndex === 3 ? 0 : currentIndex + 1)}
+          disabled={currentIndex === 3}
+        >
+          <FontAwesomeIcon icon={faChevronRight} size="lg" style={currentIndex === 3 ? {color: "#ffffff",} : {color: "#000000",}} />
+        </button>
         </div>
       </SuggestProgramField>
       <div>
-
-
+        
+        
       </div>
     </div>
   )
