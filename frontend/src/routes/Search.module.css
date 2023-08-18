@@ -44,11 +44,6 @@ body {
     right: 20px;
 }
 
-.searchButton:hover {
-    background-color: rgb(255, 129, 129);
-    color: white;
-}
-
 .searchIcon {
     font-size: 20px;
 }
@@ -141,7 +136,7 @@ body {
 
 .applyButton:hover {
     background-color: white;
-    color: rgb(255, 241, 172);
+    color: rgb(255, 223, 65);
 }
 
 .searchOption {
