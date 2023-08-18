@@ -75,6 +75,7 @@ body {
 .title {
     font-size: 20px;
     margin: 0px;
+    display: inline;
 }
 
 .searchTitle {
@@ -192,3 +193,49 @@ body {
 .searchCover > input::placeholder {
     color: black;
 }
+
+.communityButton {
+    width: 5rem;
+    padding: 5px;
+    float: right;
+    display: inline;
+    border: 0px;
+    border-radius: 5px;
+    background-color: rgb(255, 241, 172);
+    color: black;
+}
+
+.noResultDesc {
+    width: 800px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.footer {
+    padding: 8px; 
+    background: #ffed87;
+    text-align: center;
+    color: #a16c00;
+  }   
+  
+  .footer h2{
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  
+  .footer p{
+    text-align: center;
+    font-size: 12px;
+  }
+  
+  .copyright {
+    background: #ffed87;
+    display: inline-block;
+    color: #a16c00;
+    font-size: 0.75em;
+    text-align: center;
+    border-top: 3px solid rgba(255, 255, 255, 0.25);
+    padding: 1.5em 0 1em 0;
+    width: 100%;
+  }

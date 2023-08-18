@@ -1,0 +1,158 @@
+@font-face {
+  font-family: 'NanumSquareNeo-Variable';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'NanumSquareNeo-Variable';
+}
+
+
+.menuBar {
+  margin: 0px;
+  padding: 20px;
+  border-bottom: 1px solid gray;
+}
+
+.title {
+  font-size: 20px;
+  margin: 0px;
+  display: inline;
+}
+
+.communityButton {
+  width: 5rem;
+  padding: 5px;
+  float: right;
+  display: inline;
+  border: 0px;
+  border-radius: 5px;
+  background-color: rgb(255, 241, 172);
+  color: black;
+}
+
+.com-name{
+    
+  display: grid;
+  place-items: left;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 15px;
+  background-color: rgb(255, 241, 172);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-weight: 1000;
+  height: 80px;
+  font-size: 20px;
+
+}
+
+
+.post-container{
+    font-size: 20px;
+}
+
+.user-container {
+    display: inline-flex;
+    align-items: top;
+    font-size: 50px;
+  }
+
+.review-btn {
+    width: 5rem;
+    height: 3rem;
+    border-radius: 0.25rem;
+    margin-top:12px;
+    margin-left: 15px;
+    margin-top: 5px;
+    background-color: rgb(191, 220, 191);
+    font-size: 20px;
+    font-weight: 700;
+    color: green;
+    border: 1px solid;  
+  }
+
+.user{
+    font-size: 25px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+
+.post-title{
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+
+.post-content{
+    margin-top:20px;
+    font-size: 20px;
+}
+
+
+.box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 450px;
+    /* 새로운 스타일 추가 */
+    position: relative; /* 부모 요소를 기준으로 위치를 설정 */
+  }
+
+.goBack_btn{
+    /* Your styles for the go back button here */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    background-color: rgba(239, 68, 68, 0.125); /* bg-red-50 */
+    padding: 0.5rem 2rem; /* Adjust padding to increase button size */
+    
+    font-weight: 900; /* font-medium */
+    color: #EF4444; /* text-red-700 */
+    border: 1px solid #F87171; /* ring-1 */
+    cursor: pointer;
+     /* 새로운 스타일 추가 */
+    position: absolute; /* 절대 위치를 사용하여 부모 요소 내에서 위치 조정 */
+    bottom: 30px; /* 아래로 10px 이동 */
+    left: 50%; /* 가운데 정렬을 위해 왼쪽 50% 위치 */
+    transform: translateX(-50%); /* 가운데 정렬을 위한 이동 변환 */
+}
+
+
+ /* Footer */
+ .footer {
+  padding: 8px; 
+  background: #ffed87;
+  text-align: center;
+  color: #a16c00;
+}   
+
+.footer h2{
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.footer p{
+  text-align: center;
+  font-size: 12px;
+}
+
+.copyright {
+  background: #ffed87;
+  display: inline-block;
+  color: #a16c00;
+  font-size: 0.75em;
+  text-align: center;
+  border-top: 3px solid rgba(255, 255, 255, 0.25);
+  padding: 1.5em 0 1em 0;
+  width: 100%;
+}
+
+
