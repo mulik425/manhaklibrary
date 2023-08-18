@@ -150,7 +150,7 @@ function RecommendProgram() {
   });
 
   const fetchHotPrograms = async () => {
-    axios.get('api/programs/popular')
+    axios.get('link/programs/popular')
       .then(response => {
         setHotPrograms(response.data);
         console.log(response)

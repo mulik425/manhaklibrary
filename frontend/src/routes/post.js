@@ -17,7 +17,7 @@ function Post() {
     history.push("/community");
   };
 
-  const host = "api";
+  const host = "link";
   axios.create({
     baseURL: host,
   });

@@ -31,7 +31,7 @@ function UserInfo() {
 
         if (isValid) {
             try {
-                const response = await fetch(`api/programs/apply/${id}`, {
+                const response = await fetch(`link/programs/apply/${id}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
