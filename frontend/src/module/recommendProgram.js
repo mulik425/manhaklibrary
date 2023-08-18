@@ -145,7 +145,7 @@ function RecommendProgram() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const fetchHotPrograms = async () => {
-    axios.get('http://localhost:4000/programs/popular')
+    axios.get('http://192.168.2.8:4000/programs/popular')
       .then(response => {
         setHotPrograms(response.data);
         console.log(response)

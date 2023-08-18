@@ -25,7 +25,7 @@ function UserInfo() {
 
         if (isValid) {
             try {
-                const response = await fetch(`http://localhost:4000/programs/apply/${id}`, {
+                const response = await fetch(`http://192.168.2.8:4000/programs/apply/${id}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
